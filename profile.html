@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile | CareerConnect Demo</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="navbar">
+        <a class="brand" href="index.html" aria-label="Home">
+            <span class="brand-mark">in</span>
+            <span class="brand-name">CareerConnect</span>
+        </a>
+
+        <!-- Search is intentionally visual only because this project uses no JavaScript. -->
+        <label class="search-box">
+            <span>⌕</span>
+            <input type="search" placeholder="Search" aria-label="Search">
+        </label>
+
+        <nav class="main-nav" aria-label="Main navigation">
+            <a class="nav-item" href="index.html"><span class="nav-icon">⌂</span><span>Home</span></a><a class="nav-item" href="network.html"><span class="nav-icon">♧</span><span>My Network</span></a><a class="nav-item" href="jobs.html"><span class="nav-icon">▣</span><span>Jobs</span></a><a class="nav-item" href="messaging.html"><span class="nav-icon">✉</span><span>Messaging</span><span class="nav-badge">2</span></a><a class="nav-item active" href="profile.html"><img class="nav-avatar" src="images/profile.jpg" alt="Profile"><span>Me</span></a>
+            <a class="nav-item" href="profile.html">
+                <span class="nav-icon">⋮</span>
+                <span>More</span>
+            </a>
+        </nav>
+    </div>
+</header>
+
+
+<main class="page">
+    <section class="card">
+        <div class="profile-cover"></div>
+
+        <div class="profile-main">
+            <div class="profile-photo-wrap">
+                <img class="profile-photo" src="images/profile.jpg" alt="Rajesh Kumar profile photo">
+            </div>
+
+            <div class="profile-header-content">
+                <div class="profile-info">
+                    <h1>Rajesh Kumar</h1>
+                    <p class="profile-headline">Frontend Developer | HTML | CSS | JavaScript | Python | SQL</p>
+                    <p class="profile-location">Chennai, Tamil Nadu, India • 500+ connections</p>
+                    <p class="small text-blue mt-12">Contact info</p>
+                </div>
+
+                <div class="profile-actions">
+                    <button class="btn primary" type="button">Open to</button>
+                    <button class="btn" type="button">Add profile section</button>
+                    <button class="btn" type="button">More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="card profile-section">
+        <h2>About</h2>
+        <p class="about-text">Final-year engineering student interested in frontend development, cloud technologies and cybersecurity. I enjoy turning ideas into simple, responsive interfaces and learning by building practical projects.</p>
+    </section>
+
+    <section class="card profile-section">
+        <h2>Skills</h2>
+        <div class="skill-list">
+            <span class="skill">HTML5</span>
+            <span class="skill">CSS3</span>
+            <span class="skill">JavaScript</span>
+            <span class="skill">Python</span>
+            <span class="skill">SQL</span>
+            <span class="skill">Git & GitHub</span>
+            <span class="skill">Responsive Web Design</span>
+            <span class="skill">Linux</span>
+        </div>
+    </section>
+
+    <section class="card profile-section">
+        <h2>Experience</h2>
+
+        <div class="experience-item">
+            <div class="company-icon">CC</div>
+            <div>
+                <h3>Software Senior Analyst</h3>
+                <p>Capgemini • Full-time</p>
+                <p>2025 – Present • Chennai</p>
+                <p class="mt-12">Monitoring, incident handling and application support in a production environment.</p>
+            </div>
+        </div>
+
+        <div class="experience-item">
+            <div class="company-icon">PR</div>
+            <div>
+                <h3>Frontend Project Developer</h3>
+                <p>College Project • Academic</p>
+                <p>2026</p>
+                <p class="mt-12">Designed responsive interfaces using semantic HTML and CSS without frameworks.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="card profile-section">
+        <h2>Education</h2>
+
+        <div class="education-item">
+            <div class="company-icon">SU</div>
+            <div>
+                <h3>SASTRA Deemed University</h3>
+                <p>B.Tech — Electrical and Electronics Engineering</p>
+                <p>2022 – 2026</p>
+            </div>
+        </div>
+    </section>
+</main>
+</body>
+</html>

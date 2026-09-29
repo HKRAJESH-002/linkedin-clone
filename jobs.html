@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jobs | CareerConnect Demo</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="navbar">
+        <a class="brand" href="index.html" aria-label="Home">
+            <span class="brand-mark">in</span>
+            <span class="brand-name">CareerConnect</span>
+        </a>
+
+        <!-- Search is intentionally visual only because this project uses no JavaScript. -->
+        <label class="search-box">
+            <span>⌕</span>
+            <input type="search" placeholder="Search" aria-label="Search">
+        </label>
+
+        <nav class="main-nav" aria-label="Main navigation">
+            <a class="nav-item" href="index.html"><span class="nav-icon">⌂</span><span>Home</span></a><a class="nav-item" href="network.html"><span class="nav-icon">♧</span><span>My Network</span></a><a class="nav-item active" href="jobs.html"><span class="nav-icon">▣</span><span>Jobs</span></a><a class="nav-item" href="messaging.html"><span class="nav-icon">✉</span><span>Messaging</span><span class="nav-badge">2</span></a><a class="nav-item" href="profile.html"><img class="nav-avatar" src="images/profile.jpg" alt="Profile"><span>Me</span></a>
+            <a class="nav-item" href="profile.html">
+                <span class="nav-icon">⋮</span>
+                <span>More</span>
+            </a>
+        </nav>
+    </div>
+</header>
+
+
+<main class="page">
+    <div class="page-heading">
+        <h1 class="section-title">Find your next opportunity</h1>
+        <p class="small muted">Search and explore static job examples for this college demonstration.</p>
+    </div>
+
+    <section class="jobs-search">
+        <input class="input-control" type="search" placeholder="Job title, skills, or company">
+        <input class="input-control" type="text" placeholder="Location">
+        <button class="btn primary" type="button">Search</button>
+    </section>
+
+    <div class="job-layout">
+        <section class="card job-list">
+            <article class="job-card active">
+                <div class="job-row">
+                    <div class="job-company-logo">TW</div>
+                    <div class="job-info">
+                        <h2 class="job-title">Frontend Developer</h2>
+                        <p class="job-company">TechWorks India</p>
+                        <p class="job-meta">Chennai, Tamil Nadu • Hybrid</p>
+                        <p class="job-meta">₹6L – ₹9L • Posted 2 days ago</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="job-card">
+                <div class="job-row">
+                    <div class="job-company-logo">CC</div>
+                    <div class="job-info">
+                        <h2 class="job-title">Junior Cloud Engineer</h2>
+                        <p class="job-company">CloudCore</p>
+                        <p class="job-meta">Bengaluru, Karnataka • On-site</p>
+                        <p class="job-meta">₹5L – ₹8L • Posted 1 day ago</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="job-card">
+                <div class="job-row">
+                    <div class="job-company-logo">DS</div>
+                    <div class="job-info">
+                        <h2 class="job-title">Software Developer</h2>
+                        <p class="job-company">DataSphere</p>
+                        <p class="job-meta">Chennai, Tamil Nadu • Hybrid</p>
+                        <p class="job-meta">₹5.5L – ₹8L • Posted 4 days ago</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="job-card">
+                <div class="job-row">
+                    <div class="job-company-logo">AI</div>
+                    <div class="job-info">
+                        <h2 class="job-title">Python Developer Intern</h2>
+                        <p class="job-company">Alpha Innovations</p>
+                        <p class="job-meta">Remote • India</p>
+                        <p class="job-meta">₹25k/month • Posted 3 days ago</p>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <article class="card job-detail">
+            <div class="job-detail-top">
+                <div class="flex justify-between gap-12">
+                    <div>
+                        <h1>Frontend Developer</h1>
+                        <p class="job-company">TechWorks India</p>
+                        <p class="job-meta">Chennai, Tamil Nadu • Hybrid • 2 days ago</p>
+                    </div>
+                    <div class="job-company-logo">TW</div>
+                </div>
+                <div class="flex gap-8 mt-16">
+                    <button class="btn primary" type="button">Easy Apply</button>
+                    <button class="btn" type="button">Save</button>
+                </div>
+            </div>
+
+            <section class="job-detail-section">
+                <h2>About the job</h2>
+                <p class="small">We are looking for a junior frontend developer who enjoys building clean, accessible and responsive web interfaces.</p>
+            </section>
+
+            <section class="job-detail-section">
+                <h2>Responsibilities</h2>
+                <ul>
+                    <li>Build responsive pages using semantic HTML and modern CSS.</li>
+                    <li>Work with designers and backend developers.</li>
+                    <li>Write maintainable, readable frontend code.</li>
+                    <li>Test interfaces across common screen sizes.</li>
+                </ul>
+            </section>
+
+            <section class="job-detail-section">
+                <h2>Skills</h2>
+                <div class="skill-list">
+                    <span class="skill">HTML</span>
+                    <span class="skill">CSS</span>
+                    <span class="skill">JavaScript</span>
+                    <span class="skill">Git</span>
+                    <span class="skill">Responsive Design</span>
+                </div>
+            </section>
+        </article>
+    </div>
+</main>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Network | CareerConnect Demo</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="navbar">
+        <a class="brand" href="index.html" aria-label="Home">
+            <span class="brand-mark">in</span>
+            <span class="brand-name">CareerConnect</span>
+        </a>
+
+        <!-- Search is intentionally visual only because this project uses no JavaScript. -->
+        <label class="search-box">
+            <span>⌕</span>
+            <input type="search" placeholder="Search" aria-label="Search">
+        </label>
+
+        <nav class="main-nav" aria-label="Main navigation">
+            <a class="nav-item" href="index.html"><span class="nav-icon">⌂</span><span>Home</span></a><a class="nav-item active" href="network.html"><span class="nav-icon">♧</span><span>My Network</span></a><a class="nav-item" href="jobs.html"><span class="nav-icon">▣</span><span>Jobs</span></a><a class="nav-item" href="messaging.html"><span class="nav-icon">✉</span><span>Messaging</span><span class="nav-badge">2</span></a><a class="nav-item" href="profile.html"><img class="nav-avatar" src="images/profile.jpg" alt="Profile"><span>Me</span></a>
+            <a class="nav-item" href="profile.html">
+                <span class="nav-icon">⋮</span>
+                <span>More</span>
+            </a>
+        </nav>
+    </div>
+</header>
+
+
+<main class="page">
+    <div class="page-heading">
+        <h1 class="section-title">My Network</h1>
+        <p class="small muted">Manage your professional connections and discover people.</p>
+    </div>
+
+    <div class="network-layout">
+        <aside class="network-sidebar">
+            <section class="card network-menu">
+                <a class="active" href="#connections"><span>Connections</span><strong>248</strong></a>
+                <a href="#invitations"><span>Invitations</span><strong>12</strong></a>
+                <a href="#following"><span>Following & followers</span><strong>36</strong></a>
+                <a href="#groups"><span>Groups</span><strong>8</strong></a>
+                <a href="#events"><span>Events</span><strong>4</strong></a>
+                <a href="#pages"><span>Pages</span><strong>15</strong></a>
+            </section>
+        </aside>
+
+        <section>
+            <section class="card" id="invitations">
+                <div class="card-header">
+                    <div class="flex justify-between align-center">
+                        <h2 class="section-title">Invitations</h2>
+                        <span class="small text-blue">See all</span>
+                    </div>
+                </div>
+                <div class="invitation">
+                    <img class="avatar" src="images/profile-5.jpg" alt="Arun">
+                    <div class="invitation-info">
+                        <strong>Arun Prakash</strong>
+                        <p class="small muted">DevOps Engineer • 14 mutual connections</p>
+                    </div>
+                    <div class="invitation-actions">
+                        <button class="btn light" type="button">Ignore</button>
+                        <button class="btn primary" type="button">Accept</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card mt-12" id="connections">
+                <div class="card-header">
+                    <h2 class="section-title">People you may know</h2>
+                </div>
+                <div class="card-body">
+                    <div class="people-grid">
+                        <article class="card person-card">
+                            <div class="person-cover"></div>
+                            <div class="person-card-body">
+                                <img class="avatar large-avatar" src="images/profile-2.jpg" alt="Ananya">
+                                <h3>Ananya Sharma</h3>
+                                <p>Product Designer at DesignLab<br>8 mutual connections</p>
+                                <button class="btn full" type="button">Connect</button>
+                            </div>
+                        </article>
+
+                        <article class="card person-card">
+                            <div class="person-cover"></div>
+                            <div class="person-card-body">
+                                <img class="avatar large-avatar" src="images/profile-3.jpg" alt="Vikram">
+                                <h3>Vikram Rao</h3>
+                                <p>Software Engineer at TechWorks<br>12 mutual connections</p>
+                                <button class="btn full" type="button">Connect</button>
+                            </div>
+                        </article>
+
+                        <article class="card person-card">
+                            <div class="person-cover"></div>
+                            <div class="person-card-body">
+                                <img class="avatar large-avatar" src="images/profile-4.jpg" alt="Priya">
+                                <h3>Priya Nair</h3>
+                                <p>Cloud Engineer at SkyStack<br>5 mutual connections</p>
+                                <button class="btn full" type="button">Connect</button>
+                            </div>
+                        </article>
+
+                        <article class="card person-card">
+                            <div class="person-cover"></div>
+                            <div class="person-card-body">
+                                <img class="avatar large-avatar" src="images/profile-5.jpg" alt="Arun">
+                                <h3>Arun Prakash</h3>
+                                <p>DevOps Engineer at CloudCore<br>14 mutual connections</p>
+                                <button class="btn full" type="button">Connect</button>
+                            </div>
+                        </article>
+
+                        <article class="card person-card">
+                            <div class="person-cover"></div>
+                            <div class="person-card-body">
+                                <img class="avatar large-avatar" src="images/profile.jpg" alt="Rajesh">
+                                <h3>Rajesh Kumar</h3>
+                                <p>Frontend Developer<br>21 mutual connections</p>
+                                <button class="btn full" type="button">Connect</button>
+                            </div>
+                        </article>
+
+                        <article class="card person-card">
+                            <div class="person-cover"></div>
+                            <div class="person-card-body">
+                                <img class="avatar large-avatar" src="images/profile-2.jpg" alt="Meera">
+                                <h3>Meera Iyer</h3>
+                                <p>Data Analyst at InsightCo<br>7 mutual connections</p>
+                                <button class="btn full" type="button">Connect</button>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </div>
+</main>
+</body>
+</html>

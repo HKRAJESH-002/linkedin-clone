@@ -1,0 +1,1158 @@
+
+/* =========================================================
+   LINKEDIN-INSPIRED COLLEGE DEMO
+   Technologies: HTML5 + CSS3 only
+   No JavaScript is used anywhere in this project.
+   ========================================================= */
+
+/* ---------- 1. Reset + global variables ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --blue: #0a66c2;
+    --blue-dark: #004182;
+    --blue-light: #e8f3ff;
+    --text: #1d2226;
+    --muted: #666666;
+    --border: #d6d9dc;
+    --bg: #f3f2ef;
+    --white: #ffffff;
+    --green: #057642;
+    --gold: #915907;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.10);
+    --radius: 8px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.45;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* ---------- 2. Shared top navigation ---------- */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    height: 60px;
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+}
+
+.navbar {
+    width: min(1128px, calc(100% - 32px));
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    flex-shrink: 0;
+}
+
+.brand-mark {
+    width: 34px;
+    height: 34px;
+    border-radius: 4px;
+    display: grid;
+    place-items: center;
+    background: var(--blue);
+    color: white;
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.brand-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--blue);
+}
+
+.search-box {
+    width: 280px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 0 12px;
+    border-radius: 5px;
+    background: #eef3f8;
+    color: var(--muted);
+}
+
+.search-box span {
+    font-size: 18px;
+}
+
+.search-box input {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: var(--text);
+}
+
+.main-nav {
+    margin-left: auto;
+    height: 100%;
+    display: flex;
+    align-items: stretch;
+    gap: 4px;
+}
+
+.nav-item {
+    min-width: 74px;
+    padding: 7px 9px 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+    position: relative;
+    color: #444;
+    font-size: 12px;
+    border-bottom: 2px solid transparent;
+}
+
+.nav-item:hover,
+.nav-item.active {
+    color: var(--text);
+}
+
+.nav-item.active {
+    border-bottom-color: var(--text);
+}
+
+.nav-icon {
+    font-size: 19px;
+    line-height: 1;
+}
+
+.nav-avatar {
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.nav-badge {
+    position: absolute;
+    top: 3px;
+    right: 16px;
+    min-width: 17px;
+    height: 17px;
+    padding: 0 4px;
+    display: grid;
+    place-items: center;
+    border-radius: 9px;
+    background: #cc1016;
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.premium-link {
+    width: 100px;
+    padding-left: 5px;
+    padding-right: 5px;
+    color: #915907;
+    text-align: center;
+    font-size: 11px;
+    line-height: 1.15;
+}
+
+/* ---------- 3. Shared page layout ---------- */
+.page {
+    width: min(1128px, calc(100% - 32px));
+    margin: 24px auto 50px;
+}
+
+.three-column {
+    display: grid;
+    grid-template-columns: 225px minmax(0, 1fr) 300px;
+    gap: 24px;
+    align-items: start;
+}
+
+.two-column {
+    display: grid;
+    grid-template-columns: 225px minmax(0, 1fr);
+    gap: 24px;
+    align-items: start;
+}
+
+.card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.card + .card {
+    margin-top: 12px;
+}
+
+.card-header {
+    padding: 18px 20px;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.section-title {
+    font-size: 18px;
+    line-height: 1.25;
+}
+
+.muted {
+    color: var(--muted);
+}
+
+.small {
+    font-size: 13px;
+}
+
+.tiny {
+    font-size: 11px;
+}
+
+/* ---------- 4. Buttons ---------- */
+.btn {
+    min-height: 36px;
+    padding: 0 17px;
+    border: 1px solid var(--blue);
+    border-radius: 20px;
+    background: white;
+    color: var(--blue);
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.btn:hover {
+    background: var(--blue-light);
+}
+
+.btn.primary {
+    background: var(--blue);
+    color: white;
+}
+
+.btn.primary:hover {
+    background: var(--blue-dark);
+}
+
+.btn.dark {
+    border-color: #333;
+    color: #333;
+}
+
+.btn.light {
+    border-color: #777;
+    color: #555;
+}
+
+.btn.full {
+    width: 100%;
+}
+
+/* ---------- 5. Avatars ---------- */
+.avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.avatar.small-avatar {
+    width: 40px;
+    height: 40px;
+}
+
+.avatar.large-avatar {
+    width: 72px;
+    height: 72px;
+}
+
+.avatar.xlarge-avatar {
+    width: 112px;
+    height: 112px;
+}
+
+/* ---------- 6. Left profile card ---------- */
+.profile-mini {
+    text-align: center;
+    overflow: hidden;
+}
+
+.profile-mini-cover {
+    height: 55px;
+    background: linear-gradient(135deg, #8cc8ff, #dcefff);
+}
+
+.profile-mini-content {
+    padding: 0 18px 18px;
+}
+
+.profile-mini-avatar {
+    width: 72px;
+    height: 72px;
+    margin: -36px auto 10px;
+    position: relative;
+    border: 3px solid white;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-mini h2 {
+    font-size: 17px;
+    margin-bottom: 3px;
+}
+
+.profile-mini p {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.profile-stats {
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid #eee;
+    text-align: left;
+}
+
+.stat-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 7px;
+    font-size: 12px;
+}
+
+.stat-row strong {
+    color: var(--blue);
+}
+
+/* ---------- 7. Feed ---------- */
+.create-post {
+    padding: 14px 16px 10px;
+}
+
+.create-top {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.post-input {
+    flex: 1;
+    min-height: 48px;
+    border: 1px solid #777;
+    border-radius: 24px;
+    padding: 0 18px;
+    color: #555;
+    background: white;
+    outline: 0;
+}
+
+.post-actions {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.post-action {
+    border: 0;
+    background: transparent;
+    padding: 9px 5px;
+    color: #555;
+    font-weight: 700;
+}
+
+.post-action:hover {
+    background: #f3f6f8;
+    border-radius: 5px;
+}
+
+.post {
+    overflow: hidden;
+}
+
+.post-header {
+    display: flex;
+    gap: 10px;
+    padding: 16px 16px 8px;
+}
+
+.post-author {
+    flex: 1;
+}
+
+.post-author strong {
+    font-size: 14px;
+}
+
+.post-author p {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.post-menu {
+    border: 0;
+    background: transparent;
+    font-size: 20px;
+    color: #666;
+}
+
+.post-content {
+    padding: 5px 16px 14px;
+}
+
+.post-content p {
+    font-size: 14px;
+}
+
+.post-image {
+    width: 100%;
+    max-height: 430px;
+    object-fit: cover;
+}
+
+.engagement {
+    padding: 8px 16px;
+    display: flex;
+    justify-content: space-between;
+    color: #666;
+    font-size: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.reaction-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 3px 8px;
+}
+
+.reaction-btn {
+    border: 0;
+    background: transparent;
+    color: #555;
+    padding: 10px 5px;
+    border-radius: 5px;
+    font-weight: 700;
+}
+
+.reaction-btn:hover {
+    background: #f3f6f8;
+}
+
+/* ---------- 8. Right sidebar ---------- */
+.sidebar-list {
+    list-style: none;
+}
+
+.sidebar-list li {
+    padding: 8px 0;
+    font-size: 13px;
+}
+
+.sidebar-list strong {
+    display: block;
+    font-size: 14px;
+}
+
+.news-item {
+    display: grid;
+    grid-template-columns: 22px 1fr;
+    gap: 8px;
+}
+
+.news-dot {
+    font-size: 10px;
+    padding-top: 3px;
+}
+
+.footer-links {
+    padding: 18px;
+    color: #666;
+    font-size: 11px;
+    line-height: 2;
+    text-align: center;
+}
+
+/* ---------- 9. Network page ---------- */
+.page-heading {
+    margin-bottom: 14px;
+}
+
+.network-layout {
+    display: grid;
+    grid-template-columns: 250px minmax(0, 1fr);
+    gap: 24px;
+}
+
+.network-menu a {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 16px;
+    color: #444;
+    font-size: 14px;
+}
+
+.network-menu a:hover,
+.network-menu a.active {
+    color: var(--blue);
+    background: var(--blue-light);
+}
+
+.people-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.person-card {
+    text-align: center;
+    overflow: hidden;
+}
+
+.person-cover {
+    height: 65px;
+    background: linear-gradient(135deg, #d8eaff, #f1f6fb);
+}
+
+.person-card-body {
+    padding: 0 16px 18px;
+}
+
+.person-card .avatar {
+    margin: -34px auto 10px;
+    border: 3px solid white;
+    position: relative;
+}
+
+.person-card h3 {
+    font-size: 15px;
+}
+
+.person-card p {
+    margin: 5px 0 12px;
+    min-height: 38px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.invitation {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    padding: 16px;
+}
+
+.invitation-info {
+    flex: 1;
+}
+
+.invitation-actions {
+    display: flex;
+    gap: 7px;
+}
+
+/* ---------- 10. Jobs page ---------- */
+.jobs-search {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr auto;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.input-control {
+    width: 100%;
+    height: 44px;
+    padding: 0 14px;
+    border: 1px solid #888;
+    border-radius: 4px;
+    background: white;
+    outline: 0;
+}
+
+.job-layout {
+    display: grid;
+    grid-template-columns: 390px minmax(0, 1fr);
+    gap: 16px;
+}
+
+.job-list {
+    max-height: 720px;
+    overflow: hidden;
+}
+
+.job-card {
+    padding: 16px;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+}
+
+.job-card:hover {
+    background: #f8fbff;
+}
+
+.job-card.active {
+    border-left: 4px solid var(--blue);
+    background: #eef6ff;
+}
+
+.job-company-logo {
+    width: 52px;
+    height: 52px;
+    display: grid;
+    place-items: center;
+    background: #f2f2f2;
+    border: 1px solid #ddd;
+    font-weight: 800;
+    font-size: 18px;
+}
+
+.job-row {
+    display: flex;
+    gap: 12px;
+}
+
+.job-info {
+    flex: 1;
+}
+
+.job-title {
+    font-size: 16px;
+    color: var(--blue);
+    font-weight: 700;
+}
+
+.job-company {
+    font-size: 13px;
+    margin-top: 3px;
+}
+
+.job-meta {
+    margin-top: 5px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.job-detail {
+    min-height: 650px;
+}
+
+.job-detail-top {
+    padding: 22px;
+    border-bottom: 1px solid #ddd;
+}
+
+.job-detail h1 {
+    font-size: 24px;
+}
+
+.job-detail-section {
+    padding: 20px 22px;
+    border-bottom: 1px solid #eee;
+}
+
+.job-detail-section h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.job-detail-section ul {
+    padding-left: 20px;
+}
+
+.job-detail-section li {
+    margin-bottom: 7px;
+    font-size: 14px;
+}
+
+/* ---------- 11. Messaging page ---------- */
+.message-shell {
+    height: calc(100vh - 108px);
+    min-height: 600px;
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    overflow: hidden;
+}
+
+.message-sidebar {
+    border-right: 1px solid #ddd;
+    overflow: hidden;
+}
+
+.message-sidebar-header {
+    padding: 18px;
+    border-bottom: 1px solid #ddd;
+}
+
+.message-search {
+    margin-top: 12px;
+    width: 100%;
+    height: 36px;
+    border: 1px solid #888;
+    border-radius: 4px;
+    padding: 0 12px;
+}
+
+.conversation {
+    display: flex;
+    gap: 10px;
+    padding: 14px 16px;
+    border-bottom: 1px solid #eee;
+}
+
+.conversation.active {
+    background: #eef6ff;
+    border-left: 3px solid var(--blue);
+}
+
+.conversation-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.conversation-text strong,
+.conversation-text p {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.conversation-text strong {
+    font-size: 14px;
+}
+
+.conversation-text p {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.message-main {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-width: 0;
+}
+
+.message-header {
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.message-header-info {
+    flex: 1;
+}
+
+.message-list {
+    padding: 22px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.bubble {
+    max-width: 70%;
+    padding: 11px 14px;
+    border-radius: 16px;
+    background: #f2f2f2;
+    font-size: 14px;
+}
+
+.bubble.mine {
+    margin-left: auto;
+    background: #dceeff;
+}
+
+.message-time {
+    margin-top: 4px;
+    color: #777;
+    font-size: 10px;
+}
+
+.message-composer {
+    padding: 14px 18px;
+    border-top: 1px solid #ddd;
+}
+
+.composer-box {
+    min-height: 52px;
+    padding: 12px 15px;
+    border: 1px solid #777;
+    border-radius: 5px;
+    color: #777;
+}
+
+/* ---------- 12. Profile page ---------- */
+.profile-cover {
+    height: 230px;
+    background-image: url("../images/cover.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.profile-main {
+    padding: 0 28px 26px;
+}
+
+.profile-photo-wrap {
+    margin-top: -70px;
+    position: relative;
+    z-index: 2;
+}
+
+.profile-photo {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid white;
+}
+
+.profile-header-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+    align-items: flex-start;
+}
+
+.profile-info {
+    padding-top: 8px;
+    flex: 1;
+}
+
+.profile-info h1 {
+    font-size: 28px;
+}
+
+.profile-headline {
+    margin-top: 5px;
+    font-size: 16px;
+}
+
+.profile-location {
+    margin-top: 5px;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.profile-actions {
+    display: flex;
+    gap: 8px;
+    padding-top: 16px;
+}
+
+.profile-section {
+    padding: 22px 26px;
+}
+
+.profile-section h2 {
+    font-size: 20px;
+    margin-bottom: 13px;
+}
+
+.about-text {
+    max-width: 850px;
+    font-size: 14px;
+}
+
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.skill {
+    padding: 8px 13px;
+    border-radius: 18px;
+    border: 1px solid #aaa;
+    font-size: 13px;
+    background: white;
+}
+
+.experience-item,
+.education-item {
+    display: flex;
+    gap: 14px;
+    padding: 17px 0;
+    border-top: 1px solid #eee;
+}
+
+.company-icon {
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    border: 1px solid #ddd;
+    background: #f5f5f5;
+    font-weight: 800;
+}
+
+.experience-item h3,
+.education-item h3 {
+    font-size: 15px;
+}
+
+.experience-item p,
+.education-item p {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+/* ---------- 13. Utility classes ---------- */
+.flex {
+    display: flex;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.gap-8 {
+    gap: 8px;
+}
+
+.gap-12 {
+    gap: 12px;
+}
+
+.mt-12 {
+    margin-top: 12px;
+}
+
+.mt-16 {
+    margin-top: 16px;
+}
+
+.mb-12 {
+    margin-bottom: 12px;
+}
+
+.text-blue {
+    color: var(--blue);
+}
+
+.divider {
+    border: 0;
+    border-top: 1px solid #eee;
+}
+
+/* ---------- 14. Responsive design ---------- */
+@media (max-width: 1000px) {
+    .three-column {
+        grid-template-columns: 210px minmax(0, 1fr);
+    }
+
+    .right-sidebar {
+        display: none;
+    }
+
+    .search-box {
+        width: 210px;
+    }
+
+    .premium-link {
+        display: none;
+    }
+
+    .people-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .job-layout {
+        grid-template-columns: 320px minmax(0, 1fr);
+    }
+}
+
+@media (max-width: 760px) {
+    .site-header {
+        height: auto;
+    }
+
+    .navbar {
+        min-height: 60px;
+        flex-wrap: wrap;
+        padding: 8px 0;
+        gap: 8px;
+    }
+
+    .search-box {
+        order: 3;
+        width: 100%;
+    }
+
+    .main-nav {
+        margin-left: auto;
+    }
+
+    .nav-item {
+        min-width: 46px;
+    }
+
+    .nav-item span:not(.nav-icon) {
+        display: none;
+    }
+
+    .page {
+        width: min(100% - 20px, 620px);
+        margin-top: 12px;
+    }
+
+    .three-column,
+    .two-column,
+    .network-layout {
+        display: block;
+    }
+
+    .left-sidebar,
+    .network-sidebar {
+        display: none;
+    }
+
+    .card {
+        margin-bottom: 10px;
+    }
+
+    .people-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .jobs-search {
+        grid-template-columns: 1fr;
+    }
+
+    .job-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .job-list {
+        max-height: none;
+    }
+
+    .job-detail {
+        display: none;
+    }
+
+    .message-shell {
+        height: calc(100vh - 96px);
+        min-height: 560px;
+        grid-template-columns: 1fr;
+    }
+
+    .message-sidebar {
+        display: none;
+    }
+
+    .profile-cover {
+        height: 170px;
+    }
+
+    .profile-main {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .profile-photo {
+        width: 105px;
+        height: 105px;
+    }
+
+    .profile-photo-wrap {
+        margin-top: -53px;
+    }
+
+    .profile-header-content {
+        display: block;
+    }
+
+    .profile-actions {
+        padding-top: 12px;
+        flex-wrap: wrap;
+    }
+
+    .profile-section {
+        padding: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .brand-name {
+        display: none;
+    }
+
+    .navbar {
+        width: calc(100% - 16px);
+    }
+
+    .main-nav {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .nav-item {
+        flex: 1;
+    }
+
+    .post-actions,
+    .reaction-buttons {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .post-input {
+        font-size: 13px;
+    }
+
+    .profile-info h1 {
+        font-size: 23px;
+    }
+}

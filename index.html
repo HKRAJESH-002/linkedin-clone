@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | CareerConnect Demo</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="navbar">
+        <a class="brand" href="index.html" aria-label="Home">
+            <span class="brand-mark">in</span>
+            <span class="brand-name">CareerConnect</span>
+        </a>
+
+        <!-- Search is intentionally visual only because this project uses no JavaScript. -->
+        <label class="search-box">
+            <span>⌕</span>
+            <input type="search" placeholder="Search" aria-label="Search">
+        </label>
+
+        <nav class="main-nav" aria-label="Main navigation">
+            <a class="nav-item active" href="index.html"><span class="nav-icon">⌂</span><span>Home</span></a><a class="nav-item" href="network.html"><span class="nav-icon">♧</span><span>My Network</span></a><a class="nav-item" href="jobs.html"><span class="nav-icon">▣</span><span>Jobs</span></a><a class="nav-item" href="messaging.html"><span class="nav-icon">✉</span><span>Messaging</span><span class="nav-badge">2</span></a><a class="nav-item" href="profile.html"><img class="nav-avatar" src="images/profile.jpg" alt="Profile"><span>Me</span></a>
+            <a class="nav-item" href="profile.html">
+                <span class="nav-icon">⋮</span>
+                <span>More</span>
+            </a>
+        </nav>
+    </div>
+</header>
+
+
+<main class="page">
+    <div class="three-column">
+
+        <!-- LEFT: mini profile and shortcuts -->
+        <aside class="left-sidebar">
+            <section class="card profile-mini">
+                <div class="profile-mini-cover"></div>
+                <div class="profile-mini-content">
+                    <img class="profile-mini-avatar" src="images/profile.jpg" alt="Rajesh profile">
+                    <h2>Rajesh Kumar</h2>
+                    <p>Frontend Developer | EEE Student</p>
+
+                    <div class="profile-stats">
+                        <div class="stat-row"><span>Profile viewers</span><strong>48</strong></div>
+                        <div class="stat-row"><span>Post impressions</span><strong>1,284</strong></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card">
+                <div class="card-body">
+                    <p class="small"><strong>My items</strong></p>
+                    <p class="small muted mt-12">Saved posts</p>
+                    <p class="small muted mt-12">Groups</p>
+                    <p class="small muted mt-12">Events</p>
+                </div>
+            </section>
+        </aside>
+
+        <!-- CENTER: feed -->
+        <section class="feed">
+
+            <section class="card create-post">
+                <div class="create-top">
+                    <img class="avatar" src="images/profile.jpg" alt="Your profile">
+                    <input class="post-input" type="text" placeholder="Start a post" aria-label="Start a post">
+                </div>
+                <div class="post-actions">
+                    <button class="post-action" type="button">▣ Photo</button>
+                    <button class="post-action" type="button">▶ Video</button>
+                    <button class="post-action" type="button">▤ Article</button>
+                    <button class="post-action" type="button">✦ More</button>
+                </div>
+            </section>
+
+            <div class="flex align-center gap-12 mt-16 mb-12">
+                <hr class="divider" style="flex:1">
+                <span class="tiny muted">Sort: Most relevant ▾</span>
+            </div>
+
+            <article class="card post">
+                <header class="post-header">
+                    <img class="avatar" src="images/profile-2.jpg" alt="Ananya">
+                    <div class="post-author">
+                        <strong>Ananya Sharma · 2nd</strong>
+                        <p>Product Designer • 2h • Edited</p>
+                    </div>
+                    <button class="post-menu" type="button" aria-label="More options">•••</button>
+                </header>
+                <div class="post-content">
+                    <p>Small, consistent improvements in a product often create bigger results than one huge redesign. What is one design habit that improved your workflow?</p>
+                </div>
+                <img class="post-image" src="images/post-image.jpg" alt="Workspace with laptop">
+                <div class="engagement">
+                    <span>👍 ❤️ 💡 126</span>
+                    <span>18 comments • 4 reposts</span>
+                </div>
+                <div class="reaction-buttons">
+                    <button class="reaction-btn" type="button">♡ Like</button>
+                    <button class="reaction-btn" type="button">◌ Comment</button>
+                    <button class="reaction-btn" type="button">↻ Repost</button>
+                    <button class="reaction-btn" type="button">➤ Send</button>
+                </div>
+            </article>
+
+            <article class="card post">
+                <header class="post-header">
+                    <img class="avatar" src="images/profile-3.jpg" alt="Vikram">
+                    <div class="post-author">
+                        <strong>Vikram Rao · 1st</strong>
+                        <p>Software Engineer at TechWorks • 5h</p>
+                    </div>
+                    <button class="post-menu" type="button">•••</button>
+                </header>
+                <div class="post-content">
+                    <p>Finished building a small cloud storage project using REST APIs, PostgreSQL and React. The biggest lesson: understand the data flow before writing more code.</p>
+                </div>
+                <div class="engagement">
+                    <span>👍 💡 84</span>
+                    <span>9 comments</span>
+                </div>
+                <div class="reaction-buttons">
+                    <button class="reaction-btn" type="button">♡ Like</button>
+                    <button class="reaction-btn" type="button">◌ Comment</button>
+                    <button class="reaction-btn" type="button">↻ Repost</button>
+                    <button class="reaction-btn" type="button">➤ Send</button>
+                </div>
+            </article>
+        </section>
+
+        <!-- RIGHT: news -->
+        <aside class="right-sidebar">
+            <section class="card">
+                <div class="card-header">
+                    <div class="flex justify-between">
+                        <h2 class="section-title">LinkedIn-style news</h2>
+                        <span>ⓘ</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <ul class="sidebar-list">
+                        <li class="news-item"><span class="news-dot">●</span><span><strong>AI skills reshape hiring</strong><span class="muted"> 8h ago • 2,340 readers</span></span></li>
+                        <li class="news-item"><span class="news-dot">●</span><span><strong>Cloud roles continue to grow</strong><span class="muted"> 5h ago • 1,920 readers</span></span></li>
+                        <li class="news-item"><span class="news-dot">●</span><span><strong>Students build portfolio projects</strong><span class="muted"> 3h ago • 876 readers</span></span></li>
+                        <li class="news-item"><span class="news-dot">●</span><span><strong>Remote collaboration trends</strong><span class="muted"> 1h ago • 645 readers</span></span></li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="card">
+                <div class="card-body">
+                    <h2 class="section-title">People you may know</h2>
+                    <div class="flex align-center gap-8 mt-16">
+                        <img class="avatar small-avatar" src="images/profile-4.jpg" alt="Priya">
+                        <div><strong class="small">Priya Nair</strong><p class="tiny muted">Cloud Engineer</p></div>
+                    </div>
+                    <button class="btn full mt-12" type="button">Connect</button>
+                </div>
+            </section>
+
+            
+<footer class="footer-links">
+    <div>About &nbsp; Accessibility &nbsp; Help Center &nbsp; Privacy &nbsp; Terms</div>
+    <div>CareerConnect College Demo © 2026</div>
+</footer>
+
+        </aside>
+    </div>
+</main>
+</body>
+</html>
